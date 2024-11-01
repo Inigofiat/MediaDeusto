@@ -33,9 +33,9 @@ def listaDispositivos(request):
 def detalleDispositivo(request, idDispositivo):
     try:
         dispositivo = Dispositivo.objects.get(pk=idDispositivo)
-        modelos = dispositivo.modelos.all()  # Accedemos al related_name "modelos"
+        modelos = dispositivo.modelos.all()  
 
-        cadenaDeTexto = f"Dispositivo: {dispositivo.nombre}, Número de serie: {dispositivo.numeroSerie}\n"
+        cadenaDeTexto = f"Dispositivo: {dispositivo.nombre}\n"
 
         if modelos.exists():
             cadenaDeTexto += "Modelos:\n"
