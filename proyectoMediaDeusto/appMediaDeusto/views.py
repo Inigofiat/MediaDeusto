@@ -17,7 +17,7 @@ def detalleMarca(request, idMarca):
         if dispositivos.exists():
             cadenaDeTexto += "Dispositivos:\n"
             for dispositivo in dispositivos:
-                cadenaDeTexto += f"- {dispositivo.nombre}, Número de serie: {dispositivo.numeroSerie}\n"
+                cadenaDeTexto += f"- {dispositivo.nombre}\n"
         else:
             cadenaDeTexto += "No hay dispositivos asociados a esta marca."
 

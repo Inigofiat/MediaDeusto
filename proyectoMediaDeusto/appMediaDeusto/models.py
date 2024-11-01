@@ -5,21 +5,17 @@ class Marca(models.Model):
     imagenUrlMa = models.URLField(blank=True, null=True)
     idMarca = models.AutoField(primary_key=True)
 
-
-def __str__(self):
-    return self.nombre
+    def __str__(self):
+        return self.nombre
 
 class Dispositivo(models.Model):
     nombre = models.CharField(max_length=100)
-    numeroSerie = models.CharField(max_length=100)
     marca = models.ForeignKey(Marca, related_name='dispositivos', on_delete=models.CASCADE)
     imagenUrlDis = models.URLField(blank=True, null=True)
     idDispositivo = models.AutoField(primary_key=True)
 
-
-def __str__(self):
-    return self.nombre
-
+    def __str__(self):
+        return self.nombre
 
 class Modelo(models.Model):
     nombre = models.CharField(max_length=100)
@@ -30,9 +26,5 @@ class Modelo(models.Model):
     imagenUrlMo = models.URLField(blank=True, null=True)
     idModelo =models.AutoField(primary_key=True)
 
-
-
-def __str__(self):
-    return self.nombre
-
-# Create your models here.
+    def __str__(self):
+        return self.nombre
