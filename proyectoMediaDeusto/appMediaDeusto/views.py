@@ -4,7 +4,7 @@ from .models import Marca, Dispositivo, Modelo
 
 
 #VISTA INDEX
-def vistaIndex(request):
+def index(request):
     return render(request, 'index.html')
 
 
