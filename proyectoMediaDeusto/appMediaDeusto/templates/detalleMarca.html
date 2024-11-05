@@ -1,0 +1,4 @@
+<h1> {{ marca.nombre}}</h1>
+<p> {{ marca.imagenUrlMa}}</p>
+
+<a href="{% url 'listaDispositivosPorMarca' marca.id %}">Ver dispositivos de {{ marca.nombre }}</a>

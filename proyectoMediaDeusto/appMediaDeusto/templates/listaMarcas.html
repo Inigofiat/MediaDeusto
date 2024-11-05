@@ -1,0 +1,12 @@
+{% for marca in marca_list%}
+
+<h1> {{ marca.nombre }}</h1>
+<p> {{ marca.imagenUrlMa }}</p>
+
+<a href="{% url 'detalleMarca' marca.id%}">Ver detalle de {{ marca.nombre }}</a>
+
+{% empty %}
+
+    <p>No hay dispositivos disponibles.</p>
+
+{% endfor %}

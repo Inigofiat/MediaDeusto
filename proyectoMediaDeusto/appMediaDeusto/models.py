@@ -3,16 +3,14 @@ from django.db import models
 class Marca(models.Model):
     nombre = models.CharField(max_length=100)
     imagenUrlMa = models.URLField(blank=True, null=True)
-    idMarca = models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.nombre
 
 class Dispositivo(models.Model):
-    nombre = models.CharField(max_length=100)
     marca = models.ForeignKey(Marca, related_name='dispositivos', on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=100)
     imagenUrlDis = models.URLField(blank=True, null=True)
-    idDispositivo = models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.nombre
@@ -28,7 +26,6 @@ class Modelo(models.Model):
     audio = models.CharField(max_length=100, blank= True)
     proteccionIP = models.CharField(max_length=1000, blank=True)
     imagenUrlMo = models.URLField(blank=True, null=True)
-    idModelo =models.AutoField(primary_key=True)
 
     def __str__(self):
         return self.nombre
