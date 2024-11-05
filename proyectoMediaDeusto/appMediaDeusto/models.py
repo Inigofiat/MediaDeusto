@@ -18,11 +18,15 @@ class Dispositivo(models.Model):
         return self.nombre
 
 class Modelo(models.Model):
-    nombre = models.CharField(max_length=100)
-    camara = models.CharField(max_length=100)
-    capacidadBateriaMAH = models.IntegerField()
-    procesador = models.CharField(max_length=1000)
     dispositivo = models.ForeignKey(Dispositivo, related_name='modelos', on_delete=models.CASCADE)
+    nombre = models.CharField(max_length=100)
+    procesador = models.CharField(max_length=1000, blank=True)
+    ram = models.CharField(max_length=1000, blank=True)
+    grafica = models.CharField(max_length=1000, blank=True)
+    capacidadBateriaMAH = models.IntegerField()
+    camara = models.CharField(max_length=100, blank=True)
+    audio = models.CharField(max_length=100, blank= True)
+    proteccionIP = models.CharField(max_length=1000, blank=True)
     imagenUrlMo = models.URLField(blank=True, null=True)
     idModelo =models.AutoField(primary_key=True)
 
