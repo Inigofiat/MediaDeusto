@@ -2,7 +2,8 @@
 
 <h1> {{ dispositivo.nombre }}</h1>
 <p> {{ dispositivo.marca }}</p>
-<p> {{ dispositivo.imagenUrlDis }}</p>
+<img src="{{ dispositivo.imagenUrlDis }}" alt="Imagen de {{ dispositivo.nombre }}" width="300" height="auto">
+<br>
 
 <a href="{% url 'detalleDispositivo' dispositivo.id%}">Ver detalle de {{ dispositivo.nombre}}</a>
 

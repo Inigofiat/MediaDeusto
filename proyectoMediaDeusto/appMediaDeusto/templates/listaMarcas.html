@@ -1,7 +1,8 @@
 {% for marca in marca_list%}
 
 <h1> {{ marca.nombre }}</h1>
-<p> {{ marca.imagenUrlMa }}</p>
+<img src="{{ marca.imagenUrlMa }}" alt="Imagen de {{ marca.nombre }}" width="300" height="auto">
+<br>
 
 <a href="{% url 'detalleMarca' marca.id%}">Ver detalle de {{ marca.nombre }}</a>
 
