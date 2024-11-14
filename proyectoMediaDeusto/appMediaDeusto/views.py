@@ -1,7 +1,7 @@
 from django.http import HttpResponse, HttpResponseNotFound
 from django.shortcuts import render, get_object_or_404
 from .models import Marca, Dispositivo, Modelo
-
+from django.views.generic import ListView, DetailView
 
 #VISTA INDEX
 def index(request):
