@@ -1,3 +1,5 @@
+{%extends 'base.html'%}
+{%block contenido%}
 {% for marca in marca_list%}
 
 <h1> {{ marca.nombre }}</h1>
@@ -11,3 +13,4 @@
     <p>No hay marcas disponibles.</p>
 
 {% endfor %}
+{%endblock%}

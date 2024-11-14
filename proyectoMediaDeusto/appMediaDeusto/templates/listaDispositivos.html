@@ -1,3 +1,5 @@
+{%extends 'base.html'%}
+{%block contenido%}
 {% for dispositivo in dispositivo_list%}
 
 <h1> {{ dispositivo.nombre }}</h1>
@@ -12,3 +14,4 @@
     <p>No hay dispositivos disponibles.</p>
 
 {% endfor %}
+{%endblock%}

@@ -1,5 +1,8 @@
+{% extends 'base.html' %}
+{% block contenido %}
 <h1> {{ marca.nombre}}</h1>
 <img src="{{ marca.imagenUrlMa }}" alt="Imagen de {{ marca.nombre }}" width="300" height="auto">
 <br>
 
 <a href="{% url 'listaDispositivosPorMarca' marca.id %}">Ver dispositivos de {{ marca.nombre }}</a>
+{%endblock%}

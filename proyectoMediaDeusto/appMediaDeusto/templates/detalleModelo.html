@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block contenido %}
 <h1> {{ modelo.dispositivo}}</h1>
 <h2> {{ modelo.nombre}}</h2>
 <p> {{ modelo.procesador}}</p>
@@ -9,3 +11,4 @@
 <p> {{ modelo.proteccionIP}}</p>
 <img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
 <br>
+{%endblock%}

@@ -1,3 +1,5 @@
+{%extends 'base.html'%}
+{%block contenido%}
 {% for modelo in modelo_list%}
 
 <h1> {{ modelo.nombre }}</h1>
@@ -19,3 +21,4 @@
     <p>No hay modelos disponibles.</p>
 
 {% endfor %}
+{%endblock%}
