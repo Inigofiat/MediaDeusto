@@ -63,3 +63,11 @@ def listaModelosPorDispositivo(request, id_dispositivo):
     modelos = Modelo.objects.filter(dispositivo=dispositivo)
     contexto = {'dispositivo':dispositivo,'modelo_list': modelos}
     return render(request, 'listaModelosPorDispositivo.html', contexto)
+
+def index(request):
+    modelos = [
+        {'imagen': '../static/style/iphone16.jpeg', 'precio': '950€'},
+        {'imagen': '../static/style/Victus.jpg', 'precio': '825€'},
+        {'imagen': '../static/style/RelojGalaxy.jpg', 'precio': '300€'},
+    ]
+    return render(request, 'index.html', {'modelos': modelos})

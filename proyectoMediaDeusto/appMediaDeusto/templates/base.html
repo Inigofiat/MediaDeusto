@@ -78,6 +78,16 @@
           <div class="sidebar_base"></div>
         </div>
       </div>
+      <div id="modelos-container">
+    
+        {% for modelo in modelos %}
+          <div class="modelo-item">
+            <img src="{% static modelo.imagen %}" alt="Modelo" class="modelo-img">
+            <p class="modelo-precio">{{ modelo.precio }}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <br>
       <!-- <div id="content">
          insert the page content here 
         <h1>Welcome to the simplestyle_4 template</h1>
@@ -96,7 +106,8 @@
         </ul>
       </div> -->
     
-    <div>{%block contenido%} {%endblock%}</div>
+    <div>{%block contenido%} {%endblock%}</div> 
+
     </div>
     <div id="content_footer"></div>
     <div id="footer">
