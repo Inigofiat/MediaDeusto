@@ -323,3 +323,17 @@ table tr td
 { background: red;
   color: #47433F;
   border-top: 1px solid #FFF;}
+#FotoBlackFriday {
+  text-align: center; 
+  width: 100%; 
+  max-width: 900px; 
+  margin: 0 auto;
+  margin-bottom: 10px; 
+}
+
+#FotoBlackFriday img {
+  width: 100%; 
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 10px; 
+}
