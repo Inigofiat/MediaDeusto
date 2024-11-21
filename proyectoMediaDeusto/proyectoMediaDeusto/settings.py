@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+
 ]
 
 ROOT_URLCONF = 'proyectoMediaDeusto.urls'
@@ -122,3 +124,25 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Activa la internacionalización y localización
+USE_I18N = True
+USE_L10N = True
+
+# Idiomas soportados en el proyecto
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+# Idioma por defecto
+LANGUAGE_CODE = 'es'
+
+# Zona horaria
+TIME_ZONE = 'UTC'
+
+# Ruta donde se almacenarán los archivos de traducción
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+

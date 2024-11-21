@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block contenido %}
+{% load i18n %}
 <h1> {{ dispositivo.marca}}</h1>
 <h2> {{ dispositivo.nombre}}</h2>
 <img src="{{ dispositivo.imagenUrlDis }}" alt="Imagen de {{ dispositivo.nombre }}" width="300" height="auto">
