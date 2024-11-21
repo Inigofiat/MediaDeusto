@@ -166,12 +166,8 @@ ul#menu li.selected a
 { height: 20px;
   padding: 6px 35px 5px 28px;}
 
-ul#menu li.selected
-{ margin: 1px 2px 0 0;
-  background: #b6c9cd url(tab_selected.png) no-repeat 0 0;}
-
 ul#menu li.selected a, ul#menu li.selected a:hover
-{ background: #2e383a url(tab_selected.png) no-repeat 100% 0;
+{ 
   color: #FFF;}
 
 ul#menu li a:hover
