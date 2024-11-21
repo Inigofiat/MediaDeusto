@@ -26,6 +26,7 @@ class Modelo(models.Model):
     audio = models.CharField(max_length=100, blank= True)
     proteccionIP = models.CharField(max_length=1000, blank=True)
     imagenUrlMo = models.URLField(blank=True, null=True)
+    precio = models.FloatField(max_length=100, default=0.0)
 
     def __str__(self):
         return self.nombre

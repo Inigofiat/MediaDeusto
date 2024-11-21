@@ -12,6 +12,7 @@
 <p> {{ modelo.audio }}</p>
 <p> {{ modelo.proteccionIP }}</p>
 <img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
+<p> {{ modelo.precio }}</p>
 <br>
 
 <a href="{% url 'detalleModelo' modelo.id%}">Ver detalle de {{ modelo.nombre}}</a>
