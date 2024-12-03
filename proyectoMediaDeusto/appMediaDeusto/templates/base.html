@@ -25,11 +25,19 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="{% url 'index' %}">Home</a></li>
+          <li class="selected"><a href="{% url 'index' %}">Inicio</a></li>
           <li><a href="{% url 'listaMarcas' %}">Marcas</a></li>
           <li><a href="{% url 'listaDispositivos' %}">Dispositivos</a></li>
           <li><a href="{% url 'listaModelos' %}">Modelos</a></li>
           <li><a href="contact.html">Contact Us</a></li>
+          <li>
+            <form method="post" action="#" id="search_form">
+              <p>
+                <input class="search" type="text" name="search_field" value="Buscar en nuestra tienda..." />
+                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="{% static 'style/search.png' %}" alt="Search" title="Search" />
+              </p>
+            </form>
+          </li>
         </ul>
       </div>
     </div>
@@ -38,47 +46,7 @@
       <div id = "FotoBlackFriday">
         <img src="{% static 'style/Blackfriday.png' %}" alt="Example Image">
       </div>
-      <script src="{% static 'style/index.js' %}"></script>
-
-      <div id="sidebar_container">
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <!-- insert your sidebar items here -->
-            <h3>Latest News</h3>
-            <h4>New Website Launched</h4>
-            <h5>January 1st, 2010</h5>
-            <p>2010 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
-          </div>
-          <div class="sidebar_base"></div>
-        </div>
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <h3>Links</h3>
-            <ul>
-              <li><a href="{% url 'listaMarcas' %}">Marcas</a></li>
-              <li><a href="{% url 'listaDispositivos' %}">Dispositivos</a></li>
-              <li><a href="{% url 'listaModelos' %}">Modelos</a></li>
-            </ul>
-          </div>
-          <div class="sidebar_base"></div>
-        </div>
-        <div class="sidebar">
-          <div class="sidebar_top"></div>
-          <div class="sidebar_item">
-            <h3>Search</h3>
-            <form method="post" action="#" id="search_form">
-              <p>
-                <input class="search" type="text" name="search_field" value="Enter keywords....." />
-                <input name="search" type="image" style="border: 0; margin: 0 0 -9px 5px;" src="style/search.png" alt="Search" title="Search" />
-              </p>
-            </form>
-          </div>
-          <div class="sidebar_base"></div>
-        </div>
-        
-      </div>
+      <script src="{% static 'style/index.js' %}"></script> 
       <div id="modelos-container">
         {% for modelo in modelos %}
           <div class="modelo-item">
@@ -87,7 +55,6 @@
           </div>
         {% endfor %}
       </div>
-      <script src="{% static 'style/index.js' %}"></script>
       <br>
       <!-- <div id="content">
          insert the page content here 
@@ -112,7 +79,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+      <p><a href="index.html">Inicio</a> | <a href="examples.html">Marcas</a> | <a href="page.html">Dispositivos</a> | <a href="another_page.html">Modelos</a> | <a href="contact.html">Contact Us</a></p>
       <p>Copyright &copy; simplestyle_4 | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">design from HTML5webtemplates.co.uk</a></p>
     </div>
   </div>
