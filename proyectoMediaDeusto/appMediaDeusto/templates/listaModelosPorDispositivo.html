@@ -1,25 +1,38 @@
 {%extends 'base.html'%}
 {%block contenido%}
-{% for modelo in modelo_list%}
+{% load static %}
 
-<h1> {{ modelo.nombre }}</h1>
-<p> {{ modelo.dispositivo }}</p>
-<p> {{ modelo.procesador }}</p>
-<p> {{ modelo.ram }}</p>
-<p> {{ modelo.grafica }}</p>
-<p> {{ modelo.capacidadBateriaMAH }}</p>
-<p> {{ modelo.camara }}</p>
-<p> {{ modelo.audio }}</p>
-<p> {{ modelo.proteccionIP }}</p>
-<img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
-<p> {{ modelo.precio }}</p>
-<br>
+<html>
+    <head>
+        <title>Lista de Modelos por Dispositivo</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/modelos.css' %}" /> 
+    </head>
+    <body>
+        <div id="divBuscador">
+            <input type="text" class="buscador" placeholder="Buscar modelo...">
+        </div>
 
-<a href="{% url 'detalleModelo' modelo.id%}">Ver detalle de {{ modelo.nombre}}</a>
+        <h1>Lista de Modelos</h1>
 
-{% empty %}
-    
-    <p>No hay modelos disponibles.</p>
+        {% for modelo in modelo_list %} 
+        
+            <div class="modeloInfo">
+                <div id=informacion>
+                <ul>
+                    <a href="{% url 'detalleModelo' modelo.id %}">
+                        <li>
+                       
+                            <span id="spanNombre"><h2>{{ modelo.nombre }}</h2></span>
+                            <h3> {{ modelo.dispositivo }}</h3>
+                            <span id="spanImagen"><img src=" {{modelo.imagenUrlMo}}" alt="Foto del modelo"  width="300" height="auto"></span>             
+                            <p> Precio: {{ modelo.precio }} €</p>
 
-{% endfor %}
-{%endblock%}
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>

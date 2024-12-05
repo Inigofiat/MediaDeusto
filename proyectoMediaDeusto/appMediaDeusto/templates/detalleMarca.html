@@ -1,8 +1,23 @@
 {% extends 'base.html' %}
 {% block contenido %}
-<h1> {{ marca.nombre}}</h1>
-<img src="{{ marca.imagenUrlMa }}" alt="Imagen de {{ marca.nombre }}" width="300" height="auto">
-<br>
+{%load static%}
+<html>
+    <head>
+        <title>Detalle de Marca</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/marcas.css' %}" />
+    </head>
+    <body>
+        
+        <h1> {{ marca.nombre}}</h1>
+        <div id="informacion">
+            <img src="{{ marca.imagenUrlMa }}" alt="Imagen de {{ marca.nombre }}" width="300" height="auto">
+            <br>
+            <p>{{ marca.descripcion }}</p>
+            <br>
+            <a href="{% url 'listaDispositivosPorMarca' pk=marca.id %}">Ver dispositivos de {{ marca.nombre }}</a>
+        </div>
+        {%endblock%}
+    </body>
+</html>
 
-<a href="{% url 'listaDispositivosPorMarca' marca.id %}">Ver dispositivos de {{ marca.nombre }}</a>
-{%endblock%}
+

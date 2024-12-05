@@ -3,6 +3,7 @@ from django.db import models
 class Marca(models.Model):
     nombre = models.CharField(max_length=100)
     imagenUrlMa = models.URLField(blank=True, null=True)
+    descripcion = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.nombre
@@ -11,6 +12,7 @@ class Dispositivo(models.Model):
     marca = models.ForeignKey(Marca, related_name='dispositivos', on_delete=models.CASCADE)
     nombre = models.CharField(max_length=100)
     imagenUrlDis = models.URLField(blank=True, null=True)
+    descripcion = models.CharField(max_length=500, default="")
 
     def __str__(self):
         return self.nombre

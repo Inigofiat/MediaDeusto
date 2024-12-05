@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 {% block contenido %}
-{% load i18n %}
-<h1> {{ dispositivo.marca}}</h1>
-<h2> {{ dispositivo.nombre}}</h2>
-<img src="{{ dispositivo.imagenUrlDis }}" alt="Imagen de {{ dispositivo.nombre }}" width="300" height="auto">
-<br>
+{%load static%}
+<html>
+    <head>
+        <title>Detalle de Dispositivo</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/dispositivos.css' %}" />
+    </head>
+    <body>
+        
+        <h1> {{ dispositivo.nombre}}</h1>
+        <div id="informacion">
+            <img src="{{ dispositivo.imagenUrlDis }}" alt="Imagen de {{ dispositivo.nombre }}" width="300" height="auto">
+            <br>
+            <p>{{ dispositivo.descripcion }}</p>
+            <br>
+            <a href="{% url 'listaModelosPorDispositivo' pk=dispositivo.id %}">Ver dispositivos de {{ dispositivo.nombre }}</a>
 
-<a href="{% url 'listaModelosPorDispositivo' dispositivo.id %}">Ver modelos de {{ dispositivo.nombre }}</a>
-{%endblock%}
+        </div>
+        {%endblock%}
+    </body>
+</html>

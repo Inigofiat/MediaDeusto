@@ -1,16 +1,36 @@
-{%extends 'base.html'%}
-{%block contenido%}
-{% for marca in marca_list%}
+{% extends 'base.html' %}
+{% block contenido%}
+{% load static %}
+<html>
+    <head>
+        <title>Lista de Marcas</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/marcas.css' %}" />
+    </head>
+    <body>
+        
+        
+        <div id="divBuscador">
+            <input type="text" class="buscador" placeholder="Buscar marca...">
+        </div>
 
-<h1> {{ marca.nombre }}</h1>
-<img src="{{ marca.imagenUrlMa }}" alt="Imagen de {{ marca.nombre }}" width="300" height="auto">
-<br>
+        <h1>Lista de Marcas</h1>
 
-<a href="{% url 'detalleMarca' marca.id%}">Ver detalle de {{ marca.nombre }}</a>
+        {% for marca in marca_list %} 
+        
+            <div class="marcaInfo">
+                <div id="informacion">
+                <ul>
+                    <a href="{% url 'detalleMarca' pk=marca.id %}">
+                        <li>
+                            <span id="spanNombre"><h2>{{ marca.nombre }}</h2></span>
+                            <span id="spanImagen"><img src=" {{marca.imagenUrlMa}}" alt="Foto de la marca"  width="300" height="auto"></span>
 
-{% empty %}
-
-    <p>No hay marcas disponibles.</p>
-
-{% endfor %}
-{%endblock%}
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>

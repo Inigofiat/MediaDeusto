@@ -1,15 +1,26 @@
 {% extends 'base.html' %}
 {% block contenido %}
-<h1> {{ modelo.dispositivo}}</h1>
-<h2> {{ modelo.nombre}}</h2>
-<p> {{ modelo.procesador}}</p>
-<p> {{ modelo.ram}}</p>
-<p> {{ modelo.grafica}}</p>
-<p> {{ modelo.capacidadBateriaMAH}}</p>
-<p> {{ modelo.camara}}</p>
-<p> {{ modelo.audio}}</p>
-<p> {{ modelo.proteccionIP}}</p>
-<img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
-<p> {{ modelo.precio }}</p>
-<br>
-{%endblock%}
+{%load static%}
+<html>
+    <head>
+        <title>Detalle de Marca</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/modelos.css' %}" />
+    </head>
+    <body>
+        <h1> {{ modelo.nombre}}</h1>
+        <h2> {{ modelo.dispositivo}}</h2>
+        <div id="informacion">
+            <img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
+            <p> Precio: {{ modelo.precio }} €</p>
+            <h2>Caracteristicas</h2>
+            <p> Procesador: {{ modelo.procesador}}</p>
+            <p> Ram: {{ modelo.ram}}</p>
+            <p> Grafica: {{ modelo.grafica}}</p>
+            <p> Capacidad Bateria: {{ modelo.capacidadBateriaMAH}}</p>
+            <p> Camara: {{ modelo.camara}}</p>
+            <p> Audio: {{ modelo.audio}}</p>
+            <p> Proteccion IP: {{ modelo.proteccionIP}}</p>
+        </div>
+        {%endblock%}
+    </body>
+</html>

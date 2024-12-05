@@ -1,16 +1,49 @@
 {%extends 'base.html'%}
+{%load static %}
 {%block contenido%}
-<h1>Lista de Marcas</h1>
 
-<a href="{% url 'listaMarcas' %}">Ver lista de MARCAS</a>
+<div id="productos">
+    <h1>LOS MEJORES PRODUCTOS</h1>
+</div>
+<div id="seccionMarcas">
+
+    <div class="Izquierda">
+        <img class = "imagenIndexMarcas" src="{% static 'style/imagenIndexMarcas.avif' %}" alt="Foto de las diferentes marcas que se pueden encontrar en nuestros estancos"/>
+    </div>
+
+    <div class="Derecha">
+        <h2>Variedad de marcas</h2>
+        <p>Nuestra variedad de marcas electronicas a tu disposicion</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaMarcas' %}'">MARCAS</button>    
+    </div>
+</div>
+<br>
 
 
-<h1>Lista de Dispositivos</h1>
+<div id="seccionDispositivos">
+    <div class="Izquierda">
+        <h2>Variedad de dispositivos</h2>
+        <p>Nuestra variedad de dispositivos a tu disposicion</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaDispositivos' %}'">DISPOSITIVOS</button>    
+    </div>
+    
+    <div class="Derecha">
+        <img class = "imagenIndexDispositivos" src="{% static 'style/imagenIndexDispositivos.avif' %}" alt="Foto de las diferentes marcas que se pueden encontrar en nuestros estancos"/>
+    </div>
+</div>
+<br>
 
-<a href="{% url 'listaDispositivos' %}">Ver lista de DISPOSITIVOS</a>
 
+<div id="seccionModelos">
 
-<h1>Lista de Modelos</h1>
+    <div class="Izquierda">
+        <img class = "imagenIndexModelos" src="{% static 'style/imagenIndexModelos.avif' %}" alt="Foto de las diferentes marcas que se pueden encontrar en nuestros estancos"/>
+    </div>
 
-<a href="{% url 'listaModelos' %}">Ver lista de MODELOS</a>
+    <div class="Derecha">
+        <h2>Variedad de modelos</h2>
+        <p>Nuestra variedad de modelos a tu disposicion</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaModelos' %}'">MODELOS</button>    
+    </div>
+</div>
 {%endblock%}

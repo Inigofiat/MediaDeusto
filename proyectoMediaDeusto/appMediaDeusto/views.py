@@ -1,73 +1,81 @@
-from django.http import HttpResponse, HttpResponseNotFound
-from django.shortcuts import render, get_object_or_404
-from .models import Marca, Dispositivo, Modelo
 from django.views.generic import ListView, DetailView
+from .models import Marca, Dispositivo, Modelo
 
-#VISTA INDEX
-def index(request):
-    return render(request, 'index.html')
+# Vista índice
+from django.views.generic.base import TemplateView
 
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
+# Detalle y lista de marcas
+class DetalleMarcaView(DetailView):
+    model = Marca
+    template_name = 'detalleMarca.html'
+    context_object_name = 'marca'
 
+class ListaMarcasView(ListView):
+    model = Marca
+    template_name = 'listaMarcas.html'
+    context_object_name = 'marca_list'
+    queryset = Marca.objects.order_by('nombre')
 
-#DETALLE Y LISTA MARCAS
-def detalleMarca(request, id_marca):
-    marca = get_object_or_404(Marca, pk=id_marca)
-    contexto = {'marca': marca}
-    return render (request, 'detalleMarca.html', contexto)
+# Detalle y lista de dispositivos
+class DetalleDispositivoView(DetailView):
+    model = Dispositivo
+    template_name = 'detalleDispositivo.html'
+    context_object_name = 'dispositivo'
 
-def listaMarcas(request):
-    marcas = Marca.objects.order_by('nombre')
-    contexto = {'marca_list': marcas}
-    return render(request, 'listaMarcas.html', contexto)
+class ListaDispositivosView(ListView):
+    model = Dispositivo
+    template_name = 'listaDispositivos.html'
+    context_object_name = 'dispositivo_list'
+    queryset = Dispositivo.objects.order_by('nombre')
 
+# Detalle y lista de modelos
+class DetalleModeloView(DetailView):
+    model = Modelo
+    template_name = 'detalleModelo.html'
+    context_object_name = 'modelo'
 
+class ListaModelosView(ListView):
+    model = Modelo
+    template_name = 'listaModelos.html'
+    context_object_name = 'modelo_list'
+    queryset = Modelo.objects.order_by('nombre')
 
+# Vistas de listas filtradas
+class ListaDispositivosPorMarcaView(ListView):
+    model = Dispositivo
+    template_name = 'listaDispositivosPorMarca.html'
+    context_object_name = 'dispositivo_list'
 
-#DETALLE Y LISTA DISPOSITIVOS
-def detalleDispositivo(request, id_dispositivo):
-    dispositivo = get_object_or_404(Dispositivo, pk=id_dispositivo)
-    contexto = {'dispositivo': dispositivo}
-    return render(request, 'detalledispositivo.html', contexto)
+    def get_queryset(self):
+        return Dispositivo.objects.filter(marca_id=self.kwargs['pk']).order_by('nombre')
 
-def listaDispositivos(request):
-    dispositivos = Dispositivo.objects.order_by('nombre')
-    contexto = {'dispositivo_list': dispositivos}
-    return render(request, 'listaDispositivos.html', contexto)
+class ListaModelosPorDispositivoView(ListView):
+    model = Modelo
+    template_name = 'listaModelosPorDispositivo.html'
+    context_object_name = 'modelo_list'
 
+    def get_queryset(self):
+        return Modelo.objects.filter(dispositivo_id=self.kwargs['pk']).order_by('nombre')
 
+class IndexView(TemplateView):
+    template_name = 'index.html'
 
-
-#DETALLE Y LISTA MODELOS
-def detalleModelo(request, id_modelo):
-    modelo = get_object_or_404(Modelo, pk=id_modelo)
-    contexto = {'modelo': modelo}
-    return render(request, 'detalleModelo.html', contexto)
-
-def listaModelos(request):
-    modelos = Modelo.objects.order_by('nombre')
-    contexto = {'modelo_list': modelos}
-    return render(request, 'listaModelos.html', contexto)
-
-
-
-#VISTAS DE LISTAS FILTRADAS
-def listaDispositivosPorMarca(request, id_marca):
-    marca = get_object_or_404(Marca, pk=id_marca)
-    dispositivos = Dispositivo.objects.filter(marca=marca)
-    contexto = {'marca':marca,'dispositivo_list': dispositivos}
-    return render(request, 'listaDispositivosPorMarca.html', contexto)
-
-def listaModelosPorDispositivo(request, id_dispositivo):
-    dispositivo = get_object_or_404(Dispositivo, pk=id_dispositivo)
-    modelos = Modelo.objects.filter(dispositivo=dispositivo)
-    contexto = {'dispositivo':dispositivo,'modelo_list': modelos}
-    return render(request, 'listaModelosPorDispositivo.html', contexto)
-
-def index(request):
-    modelos = [
-        {'imagen': '../static/style/iphone16.jpeg', 'precio': '950€'},
-        {'imagen': '../static/style/Victus.jpg', 'precio': '825€'},
-        {'imagen': '../static/style/RelojGalaxy.jpg', 'precio': '300€'},
-    ]
-    return render(request, 'index.html', {'modelos': modelos})
+    def get_context_data(self, **kwargs):
+        # Llama al método padre para obtener el contexto inicial
+        context = super().get_context_data(**kwargs)
+        # Define la lista de modelos
+        context['modelos'] = [
+            {'imagen': '../static/style/iphone16.jpeg', 'precio': '950€'},
+            {'imagen': '../static/style/Victus.jpg', 'precio': '825€'},
+            {'imagen': '../static/style/RelojGalaxy.jpg', 'precio': '300€'},
+            {'imagen': '../static/style/galaxy S24 Ultra.webp', 'precio': '1100€'},
+            {'imagen': '../static/style/relojAppleS10.png', 'precio': '450€'},
+            {'imagen': '../static/style/lenovoIdepadSlim3.webp', 'precio': '650€'},
+            {'imagen': '../static/style/redmiNote13Pro.webp', 'precio': '750€'},
+            {'imagen': '../static/style/macbookProM4.jpeg', 'precio': '1325€'},
+            {'imagen': '../static/style/omenTranscend.jpg', 'precio': '1550€'},
+        ]
+        return context

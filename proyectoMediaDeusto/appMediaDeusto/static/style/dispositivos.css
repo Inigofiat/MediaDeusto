@@ -1,0 +1,70 @@
+.divBuscador{
+    width: 90%;
+    height: 10%;
+    display: inline-block;
+}
+  
+.buscador{
+    margin-top: 15px;
+    margin-bottom: 50px;
+    padding: 10px;
+    width: 554px;
+    border-radius: 20px;
+    margin-left: 20%;
+    border: 2px solid rgb(223, 0, 0);
+    font-family: "Montserrat", sans-serif;
+}
+  
+.filtro{
+    display: none;
+}
+
+h1{
+  color: white;
+  background-color: rgb(223, 0, 0);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+#informacion{
+    margin-top: 3%;
+    margin-left: 5%;
+    width: 90%;
+    height: 30%;
+    text-align: center;
+    display: inline-block;
+    place-items: center;
+    align-content: center;
+    border-radius: 10px;
+    border: solid, 2px, black;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+  
+#informacion h2{
+    margin-top: 15%;
+}
+
+#informacion a{
+    text-decoration: none;
+    color: rgb(223, 0, 0);
+    font-size: 120%;
+}
+  
+#spanImagen{
+    width: 400px;
+    height: 252.4px;
+    padding: 0 auto;
+    border-radius: 10px 0 0 10px;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+#spanNombre{
+    color: rgb(223, 0, 0);
+}

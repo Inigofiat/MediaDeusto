@@ -1,17 +1,36 @@
 {%extends 'base.html'%}
 {%block contenido%}
-{% for dispositivo in dispositivo_list%}
+{% load static %}
 
-<h1> {{ dispositivo.nombre }}</h1>
-<p> {{ dispositivo.marca }}</p>
-<img src="{{ dispositivo.imagenUrlDis }}" alt="Imagen de {{ dispositivo.nombre }}" width="300" height="auto">
-<br>
+<html>
+    <head>
+        <title>Lista de Dispositivos por Marca</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style/dispositivos.css' %}" /> 
+    </head>
+    <body>
+        <div id="divBuscador">
+            <input type="text" class="buscador" placeholder="Buscar dispositivo...">
+        </div>
 
-<a href="{% url 'detalleDispositivo' dispositivo.id%}">Ver detalle de {{ dispositivo.nombre}}</a>
+        <h1>Lista de Dispositivos</h1>
 
-{% empty %}
-    
-    <p>No hay dispositivos disponibles.</p>
+        {% for dispositivo in dispositivo_list %} 
+        
+            <div class="dispositivoInfo">
+                <div id=informacion>
+                <ul>
+                    <a href="{% url 'detalleDispositivo' dispositivo.id %}">
+                        <li>
+                       
+                            <span id="spanNombre"><h2>{{ dispositivo.nombre }}</h2></span>
+                            <span id="spanImagen"><img src=" {{dispositivo.imagenUrlDis}}" alt="Foto del dispositivo"  width="300" height="auto"></span>             
 
-{% endfor %}
-{%endblock%}
+                        </li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+        {% endblock %}
+    </body>
+</html>
