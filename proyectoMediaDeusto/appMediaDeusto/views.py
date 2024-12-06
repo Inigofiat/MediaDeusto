@@ -7,6 +7,9 @@ from django.views.generic.base import TemplateView
 class IndexView(TemplateView):
     template_name = 'index.html'
 
+class ContactUsView(TemplateView):
+    template_name = 'contactUs.html'
+
 # Detalle y lista de marcas
 class DetalleMarcaView(DetailView):
     model = Marca

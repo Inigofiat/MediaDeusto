@@ -1,7 +1,8 @@
 from django.urls import path
 from django.urls import path
 from .views import (
-    IndexView, 
+    IndexView,
+    ContactUsView, 
     ListaMarcasView,
     DetalleMarcaView,
     ListaDispositivosView,
@@ -15,6 +16,8 @@ from .views import (
 urlpatterns = [
     # Todas las vistas convertidas a CBV usan .as_view()
     path('index/', IndexView.as_view(), name='index'),
+
+    path('contactUs/', ContactUsView.as_view(), name='contactUs'),
 
     path('listaMarcas/', ListaMarcasView.as_view(), name='listaMarcas'),
     path('detalleMarca/<int:pk>/', DetalleMarcaView.as_view(), name='detalleMarca'),

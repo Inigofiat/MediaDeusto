@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block contenido %}
+{%load static%}
+<html>
+    <head>
+        <title>Contact US</title>
+        <link rel="stylesheet" type="text/css" href="{%static 'style/contactUs.css' %}" />
+    </head>
+    <body>
+        <div class="formulario">
+            <form action="procesar_contacto.php" method="post">
+                <h2>Contactanos</h2>
+        
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre">
+        
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo">
+
+                <label for="observaciones">Observaciones:</label><br>
+                <textarea id="observaciones" name="observaciones" rows="7" cols="100" placeholder="Escribe tus comentarios aquí..."></textarea>
+                <br><br>
+                <input type="submit" value="Enviar">
+            </form>
+            </div>
+        {%endblock%}
+    </body>
+</html>

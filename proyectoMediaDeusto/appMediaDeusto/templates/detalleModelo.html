@@ -8,8 +8,10 @@
     </head>
     <body>
         <h1> {{ modelo.nombre}}</h1>
-        <h2> {{ modelo.dispositivo}}</h2>
         <div id="informacion">
+            <div id="titulo2">
+                <h2> {{ modelo.dispositivo}}</h2>
+            </div>
             <img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
             <p> Precio: {{ modelo.precio }} €</p>
             <h2>Caracteristicas</h2>

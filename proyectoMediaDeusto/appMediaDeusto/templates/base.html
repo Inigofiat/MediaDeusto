@@ -26,7 +26,7 @@
           <li><a href="{% url 'listaMarcas' %}">Marcas</a></li>
           <li><a href="{% url 'listaDispositivos' %}">Dispositivos</a></li>
           <li><a href="{% url 'listaModelos' %}">Modelos</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="{% url 'contactUs' %}">Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -54,7 +54,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="index.html">Inicio</a> | <a href="examples.html">Marcas</a> | <a href="page.html">Dispositivos</a> | <a href="another_page.html">Modelos</a> | <a href="contact.html">Contact Us</a></p>
+      <p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'listaMarcas' %}">Marcas</a> | <a href="{% url 'listaDispositivos' %}">Dispositivos</a> | <a href="{% url 'listaModelos' %}">Modelos</a> | <a href="{% url 'contactUs' %}">Contact Us</a></p>
       <p>Copyright &copy; MediaDeusto | Instagram | FaceBook | X | WhatsApp</p>
     </div>
   </div>
