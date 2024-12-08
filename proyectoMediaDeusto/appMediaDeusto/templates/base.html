@@ -1,4 +1,5 @@
 {%load static%}
+{% load i18n %}
 <!DOCTYPE HTML>
 <html>
 
@@ -17,15 +18,15 @@
       <div id="logo">
         <div id="logo_text">
           <img src="{% static 'style/LOGO.png' %}" alt="Logo" width="300" height="75" />
-          <h2>Tecnología accesible, servicio imbatible</h2>
+          <h2>{% trans "Tecnología accesible, servicio imbatible" %}</h2>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
-          <li class="selected"><a href="{% url 'index' %}">Inicio</a></li>
-          <li><a href="{% url 'listaMarcas' %}">Marcas</a></li>
-          <li><a href="{% url 'listaDispositivos' %}">Dispositivos</a></li>
-          <li><a href="{% url 'listaModelos' %}">Modelos</a></li>
+          <li class="selected"><a href="{% url 'index' %}">{ % trans "Inicio" %}</a></li>
+          <li><a href="{% url 'listaMarcas' %}">{ % trans "Marcas" %}</a></li>
+          <li><a href="{% url 'listaDispositivos' %}">{ % trans "Dispositivos" %}</a></li>
+          <li><a href="{% url 'listaModelos' %}">{% trans "Modelos" %}</a></li>
           <li><a href="{% url 'contactUs' %}">Contact Us</a></li>
         </ul>
       </div>
@@ -36,7 +37,7 @@
         <img src="{% static 'style/Blackfriday.png' %}" alt="Example Image">
       </div>
       <div id="ofertas">
-        <h1>NUESTRAS OFERTAS</h1>
+        <h1> {% trans "OFERTAS" %}</h1>
       </div>
       <script src="{% static 'style/index.js' %}"></script> 
       <div id="scroll-container">
@@ -54,7 +55,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="{% url 'index' %}">Inicio</a> | <a href="{% url 'listaMarcas' %}">Marcas</a> | <a href="{% url 'listaDispositivos' %}">Dispositivos</a> | <a href="{% url 'listaModelos' %}">Modelos</a> | <a href="{% url 'contactUs' %}">Contact Us</a></p>
+      <p><a href="{% url 'index' %}">{ % trans "Inicio" %}</a> | <a href="{% url 'listaMarcas' %}">{ % trans "Marcas" % }</a> | <a href="{% url 'listaDispositivos' %}">{ % trans "Dispositivos" %}</a> | <a href="{% url 'listaModelos' %}">{ % trans "Modelos" %}</a> | <a href="{% url 'contactUs' %}">Contact Us</a></p>
       <p>Copyright &copy; MediaDeusto | Instagram | FaceBook | X | WhatsApp</p>
     </div>
   </div>

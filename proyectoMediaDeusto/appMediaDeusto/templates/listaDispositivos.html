@@ -1,36 +1,35 @@
 {% extends 'base.html' %}
-{% block contenido%}
-{%load static%}
+{% block contenido %}
+{% load static %}
+{% load i18n %}
 <html>
     <head>
-        <title>Lista de Dispositivos</title>
+        <title>{% trans "Lista de Dispositivos" %}</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style/dispositivos.css' %}" />
     </head>
     <body>
         
         <div id="divBuscador">
-            <input type="text" class="buscador" placeholder="Buscar dispositivo...">
+            <input type="text" class="buscador" placeholder="{% trans 'Buscar dispositivo...' %}">
         </div>
         
-        <h1>Lista de Dispositivos</h1>
+        <h1>{% trans "Lista de Dispositivos" %}</h1>
 
         {% for dispositivo in dispositivo_list %} 
         
             <div class="dispositivoInfo">
-                <div id=informacion>
+                <div id="informacion">
                 <ul>
                     <a href="{% url 'detalleDispositivo' dispositivo.id %}">
                         <li>
-                       
                             <span id="spanNombre"><h2>{{ dispositivo.nombre }}</h2></span>
-                            <span id="spanImagen"><img src=" {{dispositivo.imagenUrlDis}}" alt="Foto del dispositivo"  width="300" height="auto"></span>             
-
+                            <span id="spanImagen"><img src="{{ dispositivo.imagenUrlDis }}" alt="{% trans 'Foto del dispositivo' %}" width="300" height="auto"></span>             
                         </li>
                     </a>
                 </ul>
             </div>
         </div>
         {% endfor %}
-        {% endblock %}
     </body>
+{% endblock %}
 </html>

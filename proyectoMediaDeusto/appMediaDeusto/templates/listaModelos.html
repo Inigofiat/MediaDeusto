@@ -1,18 +1,19 @@
 {% extends 'base.html' %}
-{% block contenido%}
+{% block contenido %}
 {% load static %}
+{% load i18n %}
 <html>
     <head>
-        <title>Lista de Modelos</title>
+        <title>{% trans "Lista de Modelos" %}</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style/modelos.css' %}" />
     </head>
     <body>
         
         <div id="divBuscador">
-            <input type="text" class="buscador" placeholder="Buscar modelo...">
+            <input type="text" class="buscador" placeholder="{% trans 'Buscar modelo...' %}">
         </div>
         
-        <h1>Lista de Modelos</h1>
+        <h1>{% trans "Lista de Modelos" %}</h1>
 
         {% for modelo in modelo_list %} 
         
@@ -21,18 +22,16 @@
                 <ul>
                     <a href="{% url 'detalleModelo' modelo.id %}">
                         <li>
-                       
                             <span id="spanNombre"><h2>{{ modelo.nombre }}</h2></span>
-                            <h3> {{ modelo.dispositivo }}</h3>
-                            <span id="spanImagen"><img src=" {{modelo.imagenUrlMo}}" alt="Foto del modelo"  width="300" height="auto"></span>             
-                            <p> Precio: {{ modelo.precio }} €</p>
-                            
+                            <h3>{{ modelo.dispositivo }}</h3>
+                            <span id="spanImagen"><img src="{{ modelo.imagenUrlMo }}" alt="{% trans 'Foto del modelo' %}" width="300" height="auto"></span>             
+                            <p>{% trans "Precio:" %} {{ modelo.precio }} €</p>
                         </li>
                     </a>
                 </ul>
             </div>
         </div>
         {% endfor %}
-        {% endblock %}
     </body>
+{% endblock %}
 </html>

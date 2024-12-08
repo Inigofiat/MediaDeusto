@@ -146,3 +146,21 @@ LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
 
+# settings.py
+
+# Idiomas soportados en el proyecto
+LANGUAGES = [
+    ('en', 'English'),
+    ('es', 'Español'),
+]
+
+# Idioma por defecto
+LANGUAGE_CODE = 'es'  # Cambia esto al idioma que desees como predeterminado
+
+# Activa la internacionalización
+USE_I18N = True
+USE_L10N = True
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'appMediaDeusto', 'locale'),
+]

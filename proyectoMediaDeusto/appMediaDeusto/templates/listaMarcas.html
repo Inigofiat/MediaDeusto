@@ -1,19 +1,19 @@
 {% extends 'base.html' %}
-{% block contenido%}
+{% block contenido %}
 {% load static %}
+{% load i18n %}
 <html>
     <head>
-        <title>Lista de Marcas</title>
+        <title>{% trans "Lista de Marcas" %}</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style/marcas.css' %}" />
     </head>
     <body>
         
-        
         <div id="divBuscador">
-            <input type="text" class="buscador" placeholder="Buscar marca...">
+            <input type="text" class="buscador" placeholder="{% trans 'Buscar marca...' %}">
         </div>
 
-        <h1>Lista de Marcas</h1>
+        <h1>{% trans "Lista de Marcas" %}</h1>
 
         {% for marca in marca_list %} 
         
@@ -23,14 +23,13 @@
                     <a href="{% url 'detalleMarca' pk=marca.id %}">
                         <li>
                             <span id="spanNombre"><h2>{{ marca.nombre }}</h2></span>
-                            <span id="spanImagen"><img src=" {{marca.imagenUrlMa}}" alt="Foto de la marca"  width="300" height="auto"></span>
-
+                            <span id="spanImagen"><img src="{{ marca.imagenUrlMa }}" alt="{% trans 'Foto de la marca' %}" width="300" height="auto"></span>
                         </li>
                     </a>
                 </ul>
             </div>
         </div>
         {% endfor %}
-        {% endblock %}
     </body>
+{% endblock %}
 </html>

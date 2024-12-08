@@ -1,0 +1,152 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid "Tecnología accesible, servicio imbatible"
+msgstr "Tecnología accesible, servicio imbatible"
+
+msgid "Detalle de Modelo"
+msgstr "Detalle de Modelo"
+
+msgid "Precio:"
+msgstr "Precio:"
+
+msgid "Características"
+msgstr "Características"
+
+msgid "Procesador:"
+msgstr "Procesador:"
+
+msgid "RAM:"
+msgstr "RAM:"
+
+msgid "Gráfica:"
+msgstr "Gráfica:"
+
+msgid "Capacidad Batería:"
+msgstr "Capacidad Batería:"
+
+msgid "Cámara:"
+msgstr "Cámara:"
+
+msgid "Audio:"
+msgstr "Audio:"
+
+msgid "Protección IP:"
+msgstr "Protección IP:"
+
+msgid "Detalle de Marca"
+msgstr "Detalle de Marca"
+
+msgid "Ver dispositivos de"
+msgstr "Ver dispositivos de"
+
+msgid "Detalle de Dispositivo"
+msgstr "Detalle de Dispositivo"
+
+msgid "Contactanos"
+msgstr "Contáctanos"
+
+msgid "Nombre:"
+msgstr "Nombre:"
+
+msgid "Correo Electrónico:"
+msgstr "Correo Electrónico:"
+
+msgid "Observaciones:"
+msgstr "Observaciones:"
+
+msgid "Escribe tus comentarios aquí..."
+msgstr "Escribe tus comentarios aquí..."
+
+msgid "Enviar"
+msgstr "Enviar"
+
+msgid "Inicio"
+msgstr "Inicio"
+
+msgid "Marcas"
+msgstr "Marcas"
+
+msgid "Dispositivos"
+msgstr "Dispositivos"
+
+msgid "Modelos"
+msgstr "Modelos"
+
+msgid "Contact Us"
+msgstr "Contáctanos"
+
+msgid "LOS MEJORES PRODUCTOS"
+msgstr "LOS MEJORES PRODUCTOS"
+
+msgid "Variedad de marcas"
+msgstr "Variedad de marcas"
+
+msgid "Nuestra variedad de marcas electrónicas a tu disposición"
+msgstr "Nuestra variedad de marcas electrónicas a tu disposición"
+
+msgid "MARCAS"
+msgstr "MARCAS"
+
+msgid "Variedad de dispositivos"
+msgstr "Variedad de dispositivos"
+
+msgid "Nuestra variedad de dispositivos a tu disposición"
+msgstr "Nuestra variedad de dispositivos a tu disposición"
+
+msgid "DISPOSITIVOS"
+msgstr "DISPOSITIVOS"
+
+msgid "Variedad de modelos"
+msgstr "Variedad de modelos"
+
+msgid "Nuestra variedad de modelos a tu disposición"
+msgstr "Nuestra variedad de modelos a tu disposición"
+
+msgid "MODELOS"
+msgstr "MODELOS"
+
+msgid "Lista de Dispositivos"
+msgstr "Lista de Dispositivos"
+
+msgid "Buscar dispositivo..."
+msgstr "Buscar dispositivo..."
+
+msgid "Foto del dispositivo"
+msgstr "Foto del dispositivo"
+
+msgid "Lista de Dispositivos por Marca"
+msgstr "Lista de Dispositivos por Marca"
+
+msgid "Lista de Marcas"
+msgstr "Lista de Marcas"
+
+msgid "Buscar marca..."
+msgstr "Buscar marca..."
+
+msgid "Foto de la marca"
+msgstr "Foto de la marca"
+
+msgid "Lista de Modelos por Dispositivo"
+msgstr "Lista de Modelos por Dispositivo"
+
+msgid "Buscar modelo..."
+msgstr "Buscar modelo..."
+
+msgid "Foto del modelo"
+msgstr "Foto del modelo"
+
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-08 20:37+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
