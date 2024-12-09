@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% block contenido %}
-{% load i18n %}
 {%load static%}
 <html>
     <head>
-        <title>{ % trans "Detalle de Marca" % }</title>
+        <title>Detalle de Marca</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style/marcas.css' %}" />
     </head>
     <body>
@@ -15,7 +14,7 @@
             <br>
             <p>{{ marca.descripcion }}</p>
             <br>
-            <a href="{% url 'listaDispositivosPorMarca' pk=marca.id %}">{ % trans "Ver dispositivos de {{ marca.nombre }}" %}</a>
+            <a href="{% url 'listaDispositivosPorMarca' pk=marca.id %}">Ver dispositivos de {{ marca.nombre }}</a>
         </div>
         {%endblock%}
     </body>

@@ -4,31 +4,31 @@
 {% block contenido %}
 
 <div id="productos">
-    <h1>{% trans "LOS MEJORES PRODUCTOS" %}</h1>
+    <h1>LOS MEJORES PRODUCTOS</h1>
 </div>
 <div id="seccionMarcas">
 
     <div class="Izquierda">
-        <img class="imagenIndexMarcas" src="{% static 'style/imagenIndexMarcas.avif' %}" alt="{% trans 'Foto de las diferentes marcas que se pueden encontrar en nuestros estancos' %}"/>
+        <img class="imagenIndexMarcas" src="{% static 'style/imagenIndexMarcas.avif' %}" alt="Foto de las diferentes marcas que se pueden encontrar en nuestros estancos"/>
     </div>
 
     <div class="Derecha">
-        <h2>{% trans "Variedad de marcas" %}</h2>
-        <p>{% trans "Nuestra variedad de marcas electrónicas a tu disposición" %}</p>
-        <button class="boton" onclick="window.location.href='{% url 'listaMarcas' %}'">{% trans "MARCAS" %}</button>    
+        <h2>Variedad de marcas</h2>
+        <p>Nuestra variedad de marcas electrónicas a tu disposición</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaMarcas' %}'">MARCAS</button>    
     </div>
 </div>
 <br>
 
 <div id="seccionDispositivos">
     <div class="Izquierda">
-        <h2>{% trans "Variedad de dispositivos" %}</h2>
-        <p>{% trans "Nuestra variedad de dispositivos a tu disposición" %}</p>
-        <button class="boton" onclick="window.location.href='{% url 'listaDispositivos' %}'">{% trans "DISPOSITIVOS" %}</button>    
+        <h2>Variedad de dispositivos</h2>
+        <p>Nuestra variedad de dispositivos a tu disposición</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaDispositivos' %}'">DISPOSITIVOS</button>    
     </div>
     
     <div class="Derecha">
-        <img class="imagenIndexDispositivos" src="{% static 'style/imagenIndexDispositivos.avif' %}" alt="{% trans 'Foto de los diferentes dispositivos que se pueden encontrar en nuestros estancos' %}"/>
+        <img class="imagenIndexDispositivos" src="{% static 'style/imagenIndexDispositivos.avif' %}" alt="Foto de los diferentes dispositivos que se pueden encontrar en nuestros estancos"/>
     </div>
 </div>
 <br>
@@ -36,13 +36,13 @@
 <div id="seccionModelos">
 
     <div class="Izquierda">
-        <img class="imagenIndexModelos" src="{% static 'style/imagenIndexModelos.avif' %}" alt="{% trans 'Foto de los diferentes modelos que se pueden encontrar en nuestros estancos' %}"/>
+        <img class="imagenIndexModelos" src="{% static 'style/imagenIndexModelos.avif' %}" alt="Foto de los diferentes modelos que se pueden encontrar en nuestros estancos"/>
     </div>
 
     <div class="Derecha">
-        <h2>{% trans "Variedad de modelos" %}</h2>
-        <p>{% trans "Nuestra variedad de modelos a tu disposición" %}</p>
-        <button class="boton" onclick="window.location.href='{% url 'listaModelos' %}'">{% trans "MODELOS" %}</button>    
+        <h2>Variedad de modelos</h2>
+        <p>Nuestra variedad de modelos a tu disposición</p>
+        <button class="boton" onclick="window.location.href='{% url 'listaModelos' %}'">MODELOS</button>    
     </div>
 </div>
 {% endblock %}

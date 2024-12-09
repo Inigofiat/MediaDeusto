@@ -118,49 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRLS = [os.path.join(BASE_DIR, 'static')]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# Activa la internacionalización y localización
-USE_I18N = True
-USE_L10N = True
-
-# Idiomas soportados en el proyecto
-LANGUAGES = [
-    ('en', 'English'),
-    ('es', 'Español'),
-]
-
-# Idioma por defecto
-LANGUAGE_CODE = 'es'
-
-# Zona horaria
-TIME_ZONE = 'UTC'
-
-# Ruta donde se almacenarán los archivos de traducción
-LOCALE_PATHS = [
-    BASE_DIR / 'locale',
-]
-
-# settings.py
-
-# Idiomas soportados en el proyecto
-LANGUAGES = [
-    ('en', 'English'),
-    ('es', 'Español'),
-]
-
-# Idioma por defecto
-LANGUAGE_CODE = 'es'  # Cambia esto al idioma que desees como predeterminado
-
-# Activa la internacionalización
-USE_I18N = True
-USE_L10N = True
-
-LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'appMediaDeusto', 'locale'),
-]

@@ -1,10 +1,9 @@
 {% extends 'base.html' %}
 {% block contenido %}
 {% load static %}
-{% load i18n %}
 <html>
     <head>
-        <title>{% trans "Detalle de Marca" %}</title>
+        <title>Detalle de Marca</title>
         <link rel="stylesheet" type="text/css" href="{% static 'style/modelos.css' %}" />
     </head>
     <body>
@@ -13,16 +12,16 @@
             <div id="titulo2">
                 <h2>{{ modelo.dispositivo }}</h2>
             </div>
-            <img src="{{ modelo.imagenUrlMo }}" alt="{% trans 'Imagen de' %} {{ modelo.nombre }}" width="300" height="auto">
-            <p>{% trans "Precio:" %} {{ modelo.precio }} €</p>
-            <h2>{% trans "Características" %}</h2>
-            <p>{% trans "Procesador:" %} {{ modelo.procesador }}</p>
-            <p>{% trans "RAM:" %} {{ modelo.ram }}</p>
-            <p>{% trans "Gráfica:" %} {{ modelo.grafica }}</p>
-            <p>{% trans "Capacidad Batería:" %} {{ modelo.capacidadBateriaMAH }} mAh</p>
-            <p>{% trans "Cámara:" %} {{ modelo.camara }}</p>
-            <p>{% trans "Audio:" %} {{ modelo.audio }}</p>
-            <p>{% trans "Protección IP:" %} {{ modelo.proteccionIP }}</p>
+            <img src="{{ modelo.imagenUrlMo }}" alt="Imagen de {{ modelo.nombre }}" width="300" height="auto">
+            <p>Precio: {{ modelo.precio }} €</p>
+            <h2>Características</h2>
+            <p>Procesador: {{ modelo.procesador }}</p>
+            <p>RAM: {{ modelo.ram }}</p>
+            <p>Gráfica: {{ modelo.grafica }}</p>
+            <p>Capacidad Batería: {{ modelo.capacidadBateriaMAH }} mAh</p>
+            <p>Cámara: {{ modelo.camara }}</p>
+            <p>Audio: {{ modelo.audio }}</p>
+            <p>Protección IP: {{ modelo.proteccionIP }}</p>
         </div>
     </body>
 {% endblock %}
